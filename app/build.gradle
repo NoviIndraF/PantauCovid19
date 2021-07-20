@@ -7,7 +7,7 @@ plugins {
 apply from: '../shared_dependencies.gradle'
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.nifcompany.pantaucovid19"
@@ -47,5 +47,4 @@ android {
 dependencies {
     implementation project(":core")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$jetbrains_version"
 }
