@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="fontKasus">#D81B60</color>
+    <color name="fontDirawat">#1E88E5</color>
+    <color name="fontSembuh">#43A047</color>
+    <color name="fontYellow">#FFEA00</color>
+    <color name="fontMeninggal">#4E4E4E</color>
+
+    <color name="itemCard">#B39DDB</color>
+    <color name="cardKasus">#F8BBD0</color>
+    <color name="cardDirawat">#90CAF9</color>
+    <color name="cardSembuh">#B9F6CA</color>
+    <color name="cardMeninggal">#AEAEAE</color>
+</resources>

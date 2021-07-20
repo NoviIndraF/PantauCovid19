@@ -1,0 +1,4 @@
+rootProject.name = "PantauCovid19"
+include ':app'
+include ':core'
+include ':favorite'
