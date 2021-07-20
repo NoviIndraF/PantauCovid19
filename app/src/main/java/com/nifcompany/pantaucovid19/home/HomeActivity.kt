@@ -2,12 +2,11 @@ package com.nifcompany.pantaucovid19.home
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nifcompany.pantaucovid19.core.domain.model.Indonesia
 import com.nifcompany.pantaucovid19.databinding.ActivityMainBinding
@@ -95,7 +94,7 @@ class HomeActivity : AppCompatActivity() {
             }
         })
 
-        homeViewModel.provinceListLiveData.observe(this, Observer {
+        homeViewModel.provinceListLiveData.observe(this, {
             provinceAdapter.setData(it)
         })
 

@@ -4,6 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.nifcompany.pantaucovid19.core.domain.usecase.CovidUseCase
 
-class SaveProvinceViewModel(private val covidUseCase: CovidUseCase) : ViewModel() {
+class SaveProvinceViewModel(covidUseCase: CovidUseCase) : ViewModel() {
     val saveProvince = covidUseCase.getSaveDataProvince().asLiveData()
 }
