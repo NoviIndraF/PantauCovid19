@@ -45,7 +45,6 @@ object DataMapper {
                 )
             provinceList.add(province)
         }
-        Log.e("Data Province RtE", provinceList.toString())
         return provinceList
     }
 

@@ -1,6 +1,6 @@
 package com.nifcompany.pantaucovid19.core.data.source.remote
 
-import android.util.Log
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.nifcompany.pantaucovid19.core.data.source.remote.network.ApiResponse
 import com.nifcompany.pantaucovid19.core.data.source.remote.network.ApiService
 import com.nifcompany.pantaucovid19.core.data.source.remote.response.IndonesiaResponse.IndonesiaDetailResponse
@@ -22,7 +22,7 @@ class RemoteDataSource constructor (
                 emit(ApiResponse.Success(response))
             } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
-                Log.e("RemoteDataSource", e.toString())
+                FirebaseCrashlytics.getInstance().log("Error/RemoteDataSource/getDataIndonesia : "+ e.message.toString())
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -38,7 +38,7 @@ class RemoteDataSource constructor (
                 }
             } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
-                Log.e("RemoteDataSource", e.toString())
+                FirebaseCrashlytics.getInstance().log("Error/RemoteDataSource/getDataProvince : "+ e.message.toString())
             }
         }.flowOn(Dispatchers.IO)
     }

@@ -3,7 +3,6 @@ package com.nifcompany.pantaucovid19.home
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -39,16 +38,12 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(Intent.ACTION_VIEW, uri))
         }
 
-        Log.e("HomeActivity, Data Indonesia 1 : ", homeViewModel.dataIndonesia.observe(this,{indonesia-> indonesia.data.toString()}).toString())
         homeViewModel.dataIndonesia.observe(this, { indonesia ->
-            Log.e("HomeActivity, Data Indonesia 1 : ", indonesia.data.toString())
-
             if (indonesia != null) {
                 when (indonesia) {
                     is com.nifcompany.pantaucovid19.core.data.Resource.Loading -> binding.PbMain.visibility = View.VISIBLE
                     is com.nifcompany.pantaucovid19.core.data.Resource.Success -> {
                         binding.PbMain.visibility = View.GONE
-                        Log.e("HomeActivity, Data Indonesia 1 : ", indonesia.data.toString())
                         setBindingMain(indonesia.data)
                     }
                     is com.nifcompany.pantaucovid19.core.data.Resource.Error -> {
@@ -67,8 +62,6 @@ class HomeActivity : AppCompatActivity() {
                     is com.nifcompany.pantaucovid19.core.data.Resource.Success -> {
                         binding.PbMain.visibility = View.GONE
                         binding.ContentCardMain.visibility = View.VISIBLE
-                        Log.e("HomeActivity, Data Province 2 : ", province.data.toString())
-
                         provinceAdapter.setData(province.data)
                     }
                     is com.nifcompany.pantaucovid19.core.data.Resource.Error -> {

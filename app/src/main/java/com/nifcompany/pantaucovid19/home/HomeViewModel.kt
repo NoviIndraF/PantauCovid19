@@ -1,8 +1,8 @@
 package com.nifcompany.pantaucovid19.home
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.nifcompany.pantaucovid19.core.domain.usecase.CovidUseCase
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.asFlow
@@ -24,7 +24,6 @@ class HomeViewModel(private val covidUseCase: CovidUseCase) : ViewModel()  {
             covidUseCase.getSearchProvince(search)
         }
         .catch { throwable ->
-
-            Log.e("Error:", throwable.message.toString())
+            FirebaseCrashlytics.getInstance().log("Error/HomeViewModel: "+ throwable.message.toString())
         }.asLiveData()
 }
