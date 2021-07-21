@@ -6,6 +6,8 @@ import com.nifcompany.pantaucovid19.core.data.source.remote.RemoteDataSource
 import com.nifcompany.pantaucovid19.core.data.source.remote.network.ApiService
 import com.nifcompany.pantaucovid19.core.domain.repository.ICovidRepository
 import com.nifcompany.pantaucovid19.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -17,10 +19,14 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<CovidDatabase>().covidDao() }
     single {
+        val passphrase: ByteArray= SQLiteDatabase.getBytes("pantaucovid".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
-            CovidDatabase::class.java, "Covid.db"
-        ).fallbackToDestructiveMigration().build()
+            CovidDatabase::class.java, "Covid"
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 

@@ -25,6 +25,10 @@ android {
             minifyEnabled false
             proguardFiles 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+            proguardFiles 'proguard-rules.pro'
+        }
     }
 
     compileOptions {

@@ -29,6 +29,9 @@ buildscript {
 
     ext.koin_version = "2.1.6"
 
+    ext.sqlchipher ="4.4.0"
+    ext.sqlite = "2.1.0"
+
     repositories {
         google()
         jcenter()
