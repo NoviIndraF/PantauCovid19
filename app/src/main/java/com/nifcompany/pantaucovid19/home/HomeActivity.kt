@@ -9,6 +9,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nifcompany.pantaucovid19.core.domain.model.Indonesia
 import com.nifcompany.pantaucovid19.databinding.ActivityMainBinding
+import com.nifcompany.pantaucovid19.databinding.LayoutMainPlaceholderBinding
 import com.nifcompany.pantaucovid19.homeDetail.HomeDetailActivity
 import com.nifcompany.pantaucovid19.homeDetail.HomeDetailActivity.Companion.EXTRA_DATA
 import com.nifcompany.pantaucovid19.provinceDetail.ProvinceDetailActivity
@@ -19,10 +20,12 @@ class HomeActivity : AppCompatActivity() {
 
     private val homeViewModel: HomeViewModel by viewModel()
     private lateinit var binding: ActivityMainBinding
+    private lateinit var binding2: LayoutMainPlaceholderBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        binding2 = LayoutMainPlaceholderBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val provinceAdapter = ProvinceAdapter()
@@ -41,13 +44,16 @@ class HomeActivity : AppCompatActivity() {
         homeViewModel.dataIndonesia.observe(this, { indonesia ->
             if (indonesia != null) {
                 when (indonesia) {
-                    is com.nifcompany.pantaucovid19.core.data.Resource.Loading -> binding.PbMain.visibility = View.VISIBLE
+                    is com.nifcompany.pantaucovid19.core.data.Resource.Loading -> {
+                        binding.ContentPlaceHolder.root.visibility = View.VISIBLE
+                    }
                     is com.nifcompany.pantaucovid19.core.data.Resource.Success -> {
-                        binding.PbMain.visibility = View.GONE
+                        binding.ContentPlaceHolder.root.visibility = View.GONE
                         setBindingMain(indonesia.data)
                     }
                     is com.nifcompany.pantaucovid19.core.data.Resource.Error -> {
-                        binding.PbMain.visibility = View.GONE
+                        binding.ContentPlaceHolder.root.visibility = View.GONE
+                        binding.ContentError.root.visibility = View.VISIBLE
                     }
                 }
             }
@@ -57,15 +63,14 @@ class HomeActivity : AppCompatActivity() {
             if (province != null) {
                 when (province) {
                     is com.nifcompany.pantaucovid19.core.data.Resource.Loading -> {
-                        binding.PbMain.visibility = View.VISIBLE
                         binding.ContentCardMain.visibility = View.INVISIBLE}
                     is com.nifcompany.pantaucovid19.core.data.Resource.Success -> {
-                        binding.PbMain.visibility = View.GONE
                         binding.ContentCardMain.visibility = View.VISIBLE
                         provinceAdapter.setData(province.data)
                     }
                     is com.nifcompany.pantaucovid19.core.data.Resource.Error -> {
-                        binding.PbMain.visibility = View.GONE
+                        binding.ContentCardMain.visibility = View.INVISIBLE
+                        binding.ContentError.root.visibility = View.VISIBLE
                     }
                 }
             }
@@ -73,8 +78,8 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-        binding.ContentMain.SvProvince.queryHint = "Cari Nama Provinsi"
-        binding.ContentMain.SvProvince.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        binding.SvProvince.queryHint = "Cari Nama Provinsi"
+        binding.SvProvince.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
             }
@@ -91,7 +96,7 @@ class HomeActivity : AppCompatActivity() {
             provinceAdapter.setData(it)
         })
 
-        with(binding.ContentMain.RvMain) {
+        with(binding.RvMain) {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
             adapter = provinceAdapter
@@ -103,7 +108,6 @@ class HomeActivity : AppCompatActivity() {
         binding.TvMainDateUpdate.text   = data?.date
         binding.TvMainPositif.text      = formatNumber(data?.positif)
         binding.TvMainRawat.text        = formatNumber(data?.dirawat)
-        binding.TvMainSembuh.text       = formatNumber(data?.sembuh)
         binding.TvMainMeninggal.text    = formatNumber(data?.meninggal)
 
         binding.FabMain.setOnClickListener {

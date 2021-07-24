@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="8dp"
+    android:paddingBottom="16dp"
     android:paddingTop="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -13,7 +13,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/design_default_color_primary"
+        android:backgroundTint="@color/primary"
         app:layout_constraintCircleRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/CvMainDetailPositif"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/cardKasus"
@@ -96,8 +96,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginEnd="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:backgroundTint="@color/cardSembuh"
                 app:cardCornerRadius="12dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -128,6 +128,8 @@
                         android:id="@+id/TvMainDetailSembuh"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         android:text="@string/exp_value"
                         android:textColor="@color/fontSembuh"
                         android:theme="@style/fontValueProvinceDetail"
@@ -141,7 +143,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/CvKelompokUmur5"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/cardDirawat"
@@ -188,8 +190,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginEnd="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:backgroundTint="@color/cardMeninggal"
                 app:cardCornerRadius="12dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -235,12 +237,12 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/CvKelompokUmur1"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/itemCard"
                 app:cardCornerRadius="12dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
                 app:layout_constraintStart_toStartOf="@+id/guideline9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9">
 
@@ -255,9 +257,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/exp_orang_dalam_pengawasan"
-                         android:theme="@style/fontTextProvinceDetail"
+                        android:theme="@style/fontTextProvinceDetail"
                         app:layout_constraintBottom_toTopOf="@+id/TvMainDetailOdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -269,6 +272,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="@string/exp_value"
                         android:theme="@style/fontValueProvinceDetail"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -281,14 +285,13 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/CvKelompokUmur2"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:backgroundTint="@color/itemCard"
                 app:cardCornerRadius="12dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline10"
-                app:layout_constraintStart_toStartOf="@+id/guideline9"
-                app:layout_constraintTop_toBottomOf="@+id/CvKelompokUmur1">
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="@+id/CvKelompokUmur1">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -327,14 +330,15 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/CvKelompokUmur3"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/itemCard"
+                android:padding="8dp"
                 app:cardCornerRadius="12dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
                 app:layout_constraintStart_toStartOf="@+id/guideline9"
-                app:layout_constraintTop_toBottomOf="@+id/CvKelompokUmur2">
+                app:layout_constraintTop_toBottomOf="@+id/CvKelompokUmur1">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -372,14 +376,13 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:backgroundTint="@color/itemCard"
                 app:cardCornerRadius="12dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline10"
-                app:layout_constraintStart_toStartOf="@+id/guideline9"
-                app:layout_constraintTop_toBottomOf="@+id/CvKelompokUmur3">
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="@+id/CvKelompokUmur3">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

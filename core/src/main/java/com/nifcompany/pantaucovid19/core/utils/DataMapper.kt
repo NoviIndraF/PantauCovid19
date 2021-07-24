@@ -1,6 +1,5 @@
 package com.nifcompany.pantaucovid19.core.utils
 
-import android.util.Log
 import com.nifcompany.pantaucovid19.core.data.source.local.entity.IndonesiaEntity
 import com.nifcompany.pantaucovid19.core.domain.model.Province
 import com.nifcompany.pantaucovid19.core.data.source.local.entity.ProvinceEntity

@@ -2,16 +2,17 @@
 <resources>
     <style name="fontItemCardName">
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/primary</item>
     </style>
     <style name="fontItemCardText">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/primaryLight</item>
     </style>
     <style name="fontItemCardValue">
+        <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">14sp</item>
         <item name="android:textAlignment">textEnd</item>
-        <item name="android:textColor">@color/material_on_primary_emphasis_high_type</item>
+        <item name="android:textColor">@color/primaryLight</item>
     </style>
 </resources>

@@ -3,7 +3,10 @@
     <string name="app_name">Pantau Covid 19</string>
 
     <string name="exp_update">Update</string>
-    <string name="Title">Stay Healt, Stay Safe</string>
+    <string name="main_title">PANTAU COVID 19</string>
+    <string name="main_subtitle">COVID 19</string>
+    <string name="main_subtitle_value">Di INDONESIA</string>
+
     <string name="exp_date">12-12-1212</string>
     <string name="exp_countre">Indonesia</string>
     <string name="exp_positif">Positif</string>

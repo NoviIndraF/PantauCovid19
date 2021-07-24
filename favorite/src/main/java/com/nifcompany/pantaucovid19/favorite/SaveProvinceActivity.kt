@@ -3,6 +3,7 @@ package com.nifcompany.pantaucovid19.favorite
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nifcompany.pantaucovid19.favorite.databinding.ActivitySaveProvinceBinding
 import com.nifcompany.pantaucovid19.home.ProvinceAdapter
@@ -28,6 +29,7 @@ class SaveProvinceActivity : AppCompatActivity() {
 
         saveProvinceViewModel.saveProvince.observe(this, { dataTourism ->
             provinceAdapter.setData(dataTourism)
+            binding.viewEmpty.root.visibility = if (dataTourism.isNotEmpty()) View.GONE else View.VISIBLE
         })
 
         with(binding.RvSaveProvince) {

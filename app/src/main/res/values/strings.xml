@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Pantau Covid 19</string>
     <string name="title_favorite">Favorite</string>
+    <string name="error">Oops Something Wrong</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiaW5kcmExNDUzIiwiYSI6ImNrcmFuY2duaTA3bGoyeG5pdjFhYzV3NnEifQ.7HuQV0PzferCbEueNhyLvg</string>
+    <string name="exp_detail">detail</string>
 
 </resources>

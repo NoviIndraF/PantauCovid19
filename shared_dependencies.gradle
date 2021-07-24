@@ -26,4 +26,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx:19.0.0'
     implementation 'com.google.firebase:firebase-crashlytics:18.1.0'
 
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
+    implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:$mapbox_version"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v9:$mapbox_annotation_version"
 }

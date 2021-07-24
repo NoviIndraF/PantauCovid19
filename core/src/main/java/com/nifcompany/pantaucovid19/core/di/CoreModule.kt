@@ -33,7 +33,7 @@ val databaseModule = module {
 
 val networkModule = module {
     single {
-        val hostname = "tourism-api.dicoding.dev"
+        val hostname = "apicovid19indonesia-v2.vercel.app"
         val certificatePinner = CertificatePinner.Builder()
             .add(hostname, "sha256/pvk3g76Lgd71C8n6o3RZOIM4+yWhIlyaJh5Nw97XYE0=")
             .build()

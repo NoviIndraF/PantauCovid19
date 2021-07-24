@@ -8,15 +8,28 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="primary">#6200EA</color>
+    <color name="primaryLight">#D1C4E9</color>
+    <color name="accent">#88ea00</color>
+
+    <color name="darkLite">#495464</color>
+    <color name="darkLite2">#7A7A7A</color>
+    <color name="greyLite">#BBBFCA</color>
+    <color name="whiteLite">#E8E8E8</color>
+    <color name="whiteLite2">#F4F4F2</color>
+
     <color name="fontKasus">#D81B60</color>
     <color name="fontDirawat">#1E88E5</color>
     <color name="fontSembuh">#43A047</color>
-    <color name="fontYellow">#FFEA00</color>
+    <color name="fontYellow">#FFE57F</color>
     <color name="fontMeninggal">#4E4E4E</color>
 
-    <color name="itemCard">#B39DDB</color>
-    <color name="cardKasus">#F8BBD0</color>
-    <color name="cardDirawat">#90CAF9</color>
-    <color name="cardSembuh">#B9F6CA</color>
-    <color name="cardMeninggal">#AEAEAE</color>
+    <color name="itemCard">#EDE7F6</color>
+    <color name="cardKasus">#FCE4EC</color>
+    <color name="cardDirawat">#E1F5FE</color>
+    <color name="cardSembuh">#E8F5E9</color>
+    <color name="cardMeninggal">#F3F3F3</color>
+
+    <color name="placeholder">#DDDDDD</color>
+    <color name="placeholder2">#AA00FF</color>
 </resources>

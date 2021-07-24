@@ -1,10 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.PantauCovid19" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -12,11 +8,19 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="fontMainDate">
+            <item name="android:textStyle">bold</item>
+            <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/primary</item>
     </style>
 
     <style name="fontTitleCategory">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkLite2</item>
     </style>
 
     <style name="fontTextProvinceDetail">
@@ -33,13 +37,13 @@
     <style name="fontMainCategoryText">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/material_on_primary_emphasis_high_type</item>
+        <item name="android:textColor">@color/fontYellow</item>
     </style>
     <style name="fontMainCategoryValue">
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textAlignment">textStart</item>
-        <item name="android:textColor">@color/fontYellow</item>
+        <item name="android:textColor">@color/material_on_primary_emphasis_high_type</item>
     </style>
 
     <style name="fontItemCardName">
@@ -55,5 +59,9 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textAlignment">textEnd</item>
         <item name="android:textColor">@color/material_on_primary_emphasis_high_type</item>
+    </style>
+    <style name="fontPlaceHolder">
+        <item name="android:background">#DDDDDD</item>
+        <item name="android:textColor">#00000000</item>
     </style>
 </resources>

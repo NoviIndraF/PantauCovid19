@@ -1,9 +1,11 @@
 package com.nifcompany.pantaucovid19.homeDetail
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.nifcompany.pantaucovid19.core.domain.model.Indonesia
 import com.nifcompany.pantaucovid19.databinding.ActivityMainDetailBinding
+import com.nifcompany.pantaucovid19.map.MapActivity
 
 class HomeDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainDetailBinding
@@ -13,6 +15,10 @@ class HomeDetailActivity : AppCompatActivity() {
         binding = ActivityMainDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.FabMainMap.setOnClickListener {
+            val intent = Intent(this, MapActivity::class.java)
+            startActivity(intent)
+        }
         val detailIndonesia = intent.getParcelableExtra<Indonesia>(EXTRA_DATA)
         showDetailIndonesia(detailIndonesia)
     }
